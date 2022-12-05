@@ -23,23 +23,23 @@ const Navbar = () => {
             <ul class='navbar-nav me-auto'>
               <li class='nav-item'>
                 <a class='nav-link active' href='#home'>
-                  Home
+                  Records
                   <span class='visually-hidden'>(current)</span>
                 </a>
               </li>
               <li class='nav-item'>
                 <a class='nav-link' href='#'>
-                  Features
+                  Clients
                 </a>
               </li>
               <li class='nav-item'>
                 <a class='nav-link' href='#'>
-                  Pricing
+                  Employees
                 </a>
               </li>
               <li class='nav-item'>
                 <a class='nav-link' href='#'>
-                  About
+                  Services
                 </a>
               </li>
               <li class='nav-item dropdown'>
