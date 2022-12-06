@@ -4,7 +4,9 @@ const Employees = ({ employees }) => {
   return (
     <>
       <div className='container'>
-        <Table key={employees} data={employees} />
+        {employees.map((employees, index) => (
+          <Table key={index} employees={employees} />
+        ))}
       </div>
     </>
   )

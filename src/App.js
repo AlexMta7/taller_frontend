@@ -36,7 +36,7 @@ function App() {
       {employees.map((employees, index) => (
         <Table key={index} data={employees} />
       ))}
-      {/* <Employees employees={employees} /> */}
+      <Employees employees={employees} />
       {/* <Button /> */}
     </div>
   )
