@@ -1,0 +1,14 @@
+{
+  "employees": [
+    {
+    
+        "id": 1,
+        "name": "Frank",
+        "lastname": "Calabria",
+        "type": "Supervisor",
+        "dui": "05879393-2",
+        "email": "frank.calabria@gmail.com",
+        "cod_employ": "cala.fran"
+    }
+  ]
+}
