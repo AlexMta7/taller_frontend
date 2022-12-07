@@ -12,7 +12,7 @@ import Records from './components/Records'
 //Screens
 import RecordScreen from './screens/RecordsScreen'
 import EmployeesScreen from './screens/EmployeesScreen'
-import { Container } from 'react-bootstrap'
+import { Col, Container } from 'react-bootstrap'
 import AddRecord from './components/AddRecord'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -53,25 +53,105 @@ function App() {
 
   // ============================RECORDS=================================
 
-  // const [employees, setEmployees] = useState([])
+  //------------------------------------------------------------------------
 
-  // useEffect(() => {
-  //   const getEmployees = async () => {
-  //     const employeesFromDB = await fetchEmployees()
-  //     console.log(employeesFromDB)
+  // ============================EMPLOYESS=================================
 
-  //     setEmployees(employeesFromDB)
-  //   }
-  //   getEmployees()
-  // }, [])
+  const [employees, setEmployees] = useState([])
 
-  // // Fetch Employees from DB
-  // const fetchEmployees = async () => {
-  //   const data = await (
-  //     await fetch('http://localhost:8080/api/employees')
-  //   ).json()
-  //   return data
-  // }
+  useEffect(() => {
+    const getEmployees = async () => {
+      const employeesFromDB = await fetchEmployees()
+      console.log(employeesFromDB)
+
+      setEmployees(employeesFromDB)
+    }
+    getEmployees()
+  }, [])
+
+  // Fetch Employees from DB
+  const fetchEmployees = async () => {
+    const data = await (
+      await fetch('http://localhost:8080/api/employees')
+    ).json()
+    return data
+  }
+
+  // ============================EMPLOYESS=================================
+
+  //------------------------------------------------------------------------
+
+  // ============================CLIENTS=================================
+
+  const [clients, setClients] = useState([])
+
+  useEffect(() => {
+    const getClients = async () => {
+      const clientsFromDB = await fetchClients()
+      console.log(clientsFromDB)
+
+      setClients(clientsFromDB)
+    }
+    getClients()
+  }, [])
+
+  // Fetch Employees from DB
+  const fetchClients = async () => {
+    const data = await (await fetch('http://localhost:8080/api/clients')).json()
+    return data
+  }
+
+  // ============================CLIENTS=================================
+
+  //------------------------------------------------------------------------
+
+  // ============================SERVICES=================================
+
+  const [services, setServices] = useState([])
+
+  useEffect(() => {
+    const getServices = async () => {
+      const servicesFromDB = await fetchServices()
+      console.log(servicesFromDB)
+
+      setServices(servicesFromDB)
+    }
+    getServices()
+  }, [])
+
+  // Fetch Employees from DB
+  const fetchServices = async () => {
+    const data = await (
+      await fetch('http://localhost:8080/api/services')
+    ).json()
+    return data
+  }
+
+  // ============================SERVICES=================================
+
+  //------------------------------------------------------------------------
+
+  // ============================CARS=================================
+
+  const [cars, setCars] = useState([])
+
+  useEffect(() => {
+    const getCars = async () => {
+      const carsFromDB = await fetchCars()
+      console.log(carsFromDB)
+
+      setCars(carsFromDB)
+    }
+    getCars()
+  }, [])
+
+  // Fetch Employees from DB
+  const fetchCars = async () => {
+    const data = await (await fetch('http://localhost:8080/api/cars')).json()
+    return data
+  }
+
+  // ============================CARS=================================
 
   return (
     <Router>
@@ -93,12 +173,17 @@ function App() {
                         showAddRecord={showAddRecord}
                       />
                     ) : (
-                      <AddRecord onAdd={addRecord} />
+                      <Col sm={12} md={6} lg={4} xl={3}>
+                        <AddRecord onAdd={addRecord} />
+                      </Col>
                     )}
                   </>
                 }
               />
-              <Route path='/employees' element={<EmployeesScreen />} />
+              <Route
+                path='/employees'
+                element={<EmployeesScreen employees={employees} />}
+              />
             </Routes>
           </Container>
         </main>

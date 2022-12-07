@@ -3,22 +3,16 @@ import { Button, Card, Form, ListGroup } from 'react-bootstrap'
 import { useState } from 'react'
 
 const AddRecord = ({ onAdd }) => {
-  const [text, setText] = useState('')
-  const [day, setDay] = useState('')
-  const [reminder, setReminder] = useState(false)
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if (!text) {
-      alert('Add a task')
-      return
-    }
+    alert('Add a task')
 
-    onAdd({ text, day, reminder })
+    // onAdd({ text, day, reminder })
 
-    setText('')
-    setDay('')
-    setReminder(false)
+    // setText('')
+    // setDay('')
+    // setReminder(false)
   }
   return (
     <div>
@@ -27,37 +21,45 @@ const AddRecord = ({ onAdd }) => {
           <ListGroup variant='flush'>
             <Form className='add-form' onSubmit={onSubmit}>
               <ListGroup.Item className='py-1'>
+                <label>Records</label>
                 <div className='form-group'>
-                  <label>Task</label>
                   <input
                     className='form-control'
                     type='text'
                     placeholder='Add Task'
-                    value={text}
+                    // value={text}
                     onChange={(e) => {
-                      setText(e.target.value)
+                      // setText(e.target.value)
                     }}
                   />
-                </div>
-                <div className='form-group'>
-                  <label>Day & Time</label>
+                  <br />
                   <input
                     className='form-control'
                     type='text'
                     placeholder='Add Day & Time'
-                    value={day}
+                    // value={day}
                     onChange={(e) => {
-                      setDay(e.target.value)
+                      // setDay(e.target.value)
+                    }}
+                  />
+                  <br />
+                  <input
+                    className='form-control'
+                    type='text'
+                    placeholder='Add Day & Time'
+                    // value={day}
+                    onChange={(e) => {
+                      // setDay(e.target.value)
                     }}
                   />
                 </div>
+                <br />
                 <input
                   type='submit'
                   value='Save Task'
-                  className='btn btn-block'
+                  className='btn btn-block btn-primary'
                 />
               </ListGroup.Item>
-              <Button>Add</Button>
             </Form>
           </ListGroup>
         </Card.Body>

@@ -2,27 +2,7 @@ import { useState, useEffect } from 'react'
 import Employee from './Employee'
 import Table from './Table'
 
-const Employees = () => {
-  const [employees, setEmployees] = useState([])
-
-  useEffect(() => {
-    const getEmployees = async () => {
-      const employeesFromDB = await fetchEmployees()
-      console.log(employeesFromDB)
-
-      setEmployees(employeesFromDB)
-    }
-    getEmployees()
-  }, [])
-
-  // Fetch Employees from DB
-  const fetchEmployees = async () => {
-    const data = await (
-      await fetch('http://localhost:8080/api/employees')
-    ).json()
-    return data
-  }
-
+const Employees = ({ employees }) => {
   return (
     <>
       <table className='table table-hover'>

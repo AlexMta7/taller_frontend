@@ -32,9 +32,9 @@ const Navbar = ({ onAdd, showAddRecord }) => {
                 </Link>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='#'>
+                <Link to='/clients' className='nav-link'>
                   Clients
-                </a>
+                </Link>
               </li>
               <li className='nav-item'>
                 <Link to='/employees' className='nav-link'>
@@ -75,10 +75,18 @@ const Navbar = ({ onAdd, showAddRecord }) => {
               </li>
             </ul>
             {location.pathname === '/' && (
-              <Button text={!showAddRecord ? 'Add' : 'Close'} onClick={onAdd} color={!showAddRecord ? 'success' : 'danger'} />
+              <Button
+                text={!showAddRecord ? 'Add' : 'Close'}
+                onClick={onAdd}
+                color={!showAddRecord ? 'success' : 'danger'}
+              />
             )}
             {location.pathname === '/employees' && (
-              <Button text={'Add'} onClick={onAdd} color={!showAddRecord ? 'success' : 'danger'} />
+              <Button
+                text={'Add'}
+                onClick={onAdd}
+                color={!showAddRecord ? 'success' : 'danger'}
+              />
             )}
           </div>
         </div>
