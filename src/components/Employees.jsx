@@ -34,6 +34,7 @@ const Employees = () => {
             <th scope='col'>Type</th>
             <th scope='col'>DUI</th>
             <th scope='col'>email</th>
+            <th scope='col'>actions</th>
           </tr>
         </thead>
         <tbody>

@@ -19,8 +19,8 @@ import AddRecord from './components/AddRecord'
 function App() {
   // ============================RECORDS=================================
   const [showAddRecord, setShowAddRecord] = useState(false)
-
   const [records, setRecords] = useState([])
+
   useEffect(() => {
     const getRecords = async () => {
       const recordsFromDB = await fetchRecords()

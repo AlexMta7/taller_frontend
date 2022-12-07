@@ -75,7 +75,10 @@ const Navbar = ({ onAdd, showAddRecord }) => {
               </li>
             </ul>
             {location.pathname === '/' && (
-              <Button text={!showAddRecord ? 'Add' : 'Close'} onClick={onAdd} />
+              <Button text={!showAddRecord ? 'Add' : 'Close'} onClick={onAdd} color={!showAddRecord ? 'success' : 'danger'} />
+            )}
+            {location.pathname === '/employees' && (
+              <Button text={'Add'} onClick={onAdd} color={!showAddRecord ? 'success' : 'danger'} />
             )}
           </div>
         </div>

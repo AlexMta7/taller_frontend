@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button'
 import Employees from '../components/Employees'
 
 const EmployeesScreen = () => {
@@ -9,6 +10,7 @@ const EmployeesScreen = () => {
           que en records muestre el nombre y que al dar clic del empleado o carro o lo que putas sea que ahí también se vaya 
           a la tabla pero que solo muestre ese id */}
       <Employees />
+      <Button text='Add employ' color='success' />
     </>
   )
 }

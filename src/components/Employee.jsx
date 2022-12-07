@@ -1,4 +1,16 @@
+import Button from "./Button"
+
 const Employee = ({ data }) => {
+
+  const deleteEmplo = (e) => {
+    e.preventDefault()
+
+  
+      alert('Delete Emplo')
+
+
+  }
+
   return (
     <>
       <tr>
@@ -8,6 +20,10 @@ const Employee = ({ data }) => {
         <td>{data.type}</td>
         <td>{data.dui}</td>
         <td>{data.email}</td>
+        <td>
+          <Button text={'Eliminar'} color={'warning'} onClick={deleteEmplo}/>
+          <Button/>
+          </td>
       </tr>
     </>
   )
