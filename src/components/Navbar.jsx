@@ -46,7 +46,7 @@ const Navbar = ({ onAdd, showAddRecord }) => {
                   Services
                 </Link>
               </li>
-              <li className='nav-item dropdown'>
+              <li className='nav-item'>
                 <a
                   className='nav-link dropdown-toggle'
                   data-bs-toggle='dropdown'

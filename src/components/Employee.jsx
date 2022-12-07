@@ -1,14 +1,10 @@
-import Button from "./Button"
+import Button from './Button'
 
 const Employee = ({ data }) => {
-
   const deleteEmplo = (e) => {
     e.preventDefault()
 
-  
-      alert('Delete Emplo')
-
-
+    alert('Delete Emplo')
   }
 
   return (
@@ -21,9 +17,13 @@ const Employee = ({ data }) => {
         <td>{data.dui}</td>
         <td>{data.email}</td>
         <td>
-          <Button text={'Eliminar'} color={'warning'} onClick={deleteEmplo}/>
-          <Button/>
-          </td>
+          <Button
+            text={'Eliminar'}
+            color={'warning'}
+            onClick={deleteEmplo}
+            // icon={'FaTrash'}
+          />
+        </td>
       </tr>
     </>
   )
