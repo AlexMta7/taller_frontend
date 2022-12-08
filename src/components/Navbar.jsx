@@ -10,7 +10,7 @@ const Navbar = ({ onAdd, showAddRecord }) => {
       <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='/'>
-            Navbar
+            Tallercito
           </a>
           <button
             className='navbar-toggler'

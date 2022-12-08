@@ -16,6 +16,7 @@ import { Col, Container } from 'react-bootstrap'
 import AddRecord from './components/AddRecord'
 import ClientsScreen from './screens/ClientsScreen'
 import Employee from './components/Employee'
+import ServiceScreen from './screens/ServiceScreen'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -195,12 +196,16 @@ function App() {
                 element={<EmployeesScreen employees={employees} />}
               />
               <Route
+                path='/employee/:id'
+                element={<Employees employees={employees} />}
+              />
+              <Route
                 path='/clients'
                 element={<ClientsScreen clients={clients} />}
               />
               <Route
-                path='/employee/:id'
-                element={<Employees employees={employees} />}
+                path='/services'
+                element={<ServiceScreen services={services} />}
               />
             </Routes>
           </Container>

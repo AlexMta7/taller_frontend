@@ -19,7 +19,7 @@ const Employees = ({ employees, match }) => {
         </thead>
         <tbody>
           {employees.map((employees, index) => (
-            <Employee key={index} data={employees} />
+            <Employee key={index} employee={employees} />
           ))}
         </tbody>
       </table>

@@ -1,6 +1,6 @@
 import Button from './Button'
 
-const Employee = ({ data }) => {
+const Employee = ({ employee }) => {
   const deleteEmplo = (e) => {
     e.preventDefault()
 
@@ -10,12 +10,12 @@ const Employee = ({ data }) => {
   return (
     <>
       <tr>
-        <th scope='row'>{data.id}</th>
-        <td>{data.cod_employ}</td>
-        <td>{data.name + ' ' + data.lastname}</td>
-        <td>{data.type}</td>
-        <td>{data.dui}</td>
-        <td>{data.email}</td>
+        <th scope='row'>{employee.id}</th>
+        <td>{employee.cod_employ}</td>
+        <td>{employee.name + ' ' + employee.lastname}</td>
+        <td>{employee.type}</td>
+        <td>{employee.dui}</td>
+        <td>{employee.email}</td>
         <td>
           <Button
             text={'Eliminar'}
