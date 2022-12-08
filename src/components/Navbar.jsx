@@ -26,7 +26,7 @@ const Navbar = ({ onAdd, showAddRecord }) => {
           <div className='collapse navbar-collapse' id='navbarColor01'>
             <ul className='navbar-nav me-auto'>
               <li className='nav-item'>
-                <Link to='/' className='nav-link active'>
+                <Link to='/' className='nav-link '>
                   Records
                   <span className='visually-hidden'>(current)</span>
                 </Link>
@@ -34,6 +34,11 @@ const Navbar = ({ onAdd, showAddRecord }) => {
               <li className='nav-item'>
                 <Link to='/clients' className='nav-link'>
                   Clients
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link to='/cars' className='nav-link'>
+                  Cars
                 </Link>
               </li>
               <li className='nav-item'>

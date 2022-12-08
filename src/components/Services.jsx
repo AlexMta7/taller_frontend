@@ -5,11 +5,21 @@ const Services = ({ services }) => {
       <table className='table table-hover'>
         <thead className='bg-primary text-light'>
           <tr>
-            <th scope='col'>id</th>
-            <th scope='col'>Name </th>
-            <th scope='col'>Type</th>
-            <th scope='col'>Description</th>
-            <th scope='col'>Actions</th>
+            <th scope='col' width='20'>
+              id
+            </th>
+            <th scope='col' width='20'>
+              Name{' '}
+            </th>
+            <th scope='col' width='20'>
+              Type
+            </th>
+            <th scope='col' width='20'>
+              Description
+            </th>
+            <th scope='col' width='20'>
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>

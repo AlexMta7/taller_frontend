@@ -1,4 +1,12 @@
+import Button from './Button'
+
 const Client = ({ client }) => {
+  const deleteClient = (e) => {
+    e.preventDefault()
+
+    alert('Delete Client')
+  }
+
   return (
     <>
       <tr>
@@ -9,12 +17,16 @@ const Client = ({ client }) => {
         <td>{client.email}</td>
         <td>{client.phone}</td>
         <td>
-          {/* <Button
-            text={'Eliminar'}
-            color={'warning'}
-            // onClick={deleteEmplo}
-            // icon={'FaTrash'}
-          /> */}
+          <Button
+            color={'danger'}
+            onClick={deleteClient}
+            icon={'fa-solid fa-trash'}
+          />
+          <Button
+            color={'info'}
+            onClick={deleteClient}
+            icon={'fa-solid fa-pen-to-square'}
+          />
         </td>
       </tr>
     </>

@@ -39,7 +39,7 @@ const Record = ({ record }) => {
   // Fetch Employees from DB
   const fetchCar = async () => {
     const data = await (
-      await fetch('http://localhost:8080/api/car/' + record.id_car)
+      await fetch('http://localhost:8080/api/cars/' + record.id_car)
     ).json()
     return data
   }

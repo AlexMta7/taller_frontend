@@ -17,6 +17,7 @@ import AddRecord from './components/AddRecord'
 import ClientsScreen from './screens/ClientsScreen'
 import Employee from './components/Employee'
 import ServiceScreen from './screens/ServiceScreen'
+import CarsScreen from './screens/CarsScreen'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -207,6 +208,7 @@ function App() {
                 path='/services'
                 element={<ServiceScreen services={services} />}
               />
+              <Route path='/cars' element={<CarsScreen cars={cars} />} />
             </Routes>
           </Container>
         </main>
