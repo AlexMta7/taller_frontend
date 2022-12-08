@@ -14,6 +14,8 @@ import RecordScreen from './screens/RecordsScreen'
 import EmployeesScreen from './screens/EmployeesScreen'
 import { Col, Container } from 'react-bootstrap'
 import AddRecord from './components/AddRecord'
+import ClientsScreen from './screens/ClientsScreen'
+import Employee from './components/Employee'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
   useEffect(() => {
     const getRecords = async () => {
       const recordsFromDB = await fetchRecords()
+      console.log('Records')
       console.log(recordsFromDB)
 
       setRecords(recordsFromDB)
@@ -62,6 +65,7 @@ function App() {
   useEffect(() => {
     const getEmployees = async () => {
       const employeesFromDB = await fetchEmployees()
+      console.log('Employees')
       console.log(employeesFromDB)
 
       setEmployees(employeesFromDB)
@@ -88,6 +92,7 @@ function App() {
   useEffect(() => {
     const getClients = async () => {
       const clientsFromDB = await fetchClients()
+      console.log('Clients')
       console.log(clientsFromDB)
 
       setClients(clientsFromDB)
@@ -112,6 +117,7 @@ function App() {
   useEffect(() => {
     const getServices = async () => {
       const servicesFromDB = await fetchServices()
+      console.log('Services')
       console.log(servicesFromDB)
 
       setServices(servicesFromDB)
@@ -138,6 +144,7 @@ function App() {
   useEffect(() => {
     const getCars = async () => {
       const carsFromDB = await fetchCars()
+      console.log('Cars')
       console.log(carsFromDB)
 
       setCars(carsFromDB)
@@ -145,7 +152,7 @@ function App() {
     getCars()
   }, [])
 
-  // Fetch Employees from DB
+  // Fetch Cars from DB
   const fetchCars = async () => {
     const data = await (await fetch('http://localhost:8080/api/cars')).json()
     return data
@@ -170,6 +177,9 @@ function App() {
                     {records.length > 0 ? (
                       <RecordScreen
                         records={records}
+                        employees={employees}
+                        cars={cars}
+                        clients={clients}
                         showAddRecord={showAddRecord}
                       />
                     ) : (
@@ -183,6 +193,14 @@ function App() {
               <Route
                 path='/employees'
                 element={<EmployeesScreen employees={employees} />}
+              />
+              <Route
+                path='/clients'
+                element={<ClientsScreen clients={clients} />}
+              />
+              <Route
+                path='/employee/:id'
+                element={<Employees employees={employees} />}
               />
             </Routes>
           </Container>

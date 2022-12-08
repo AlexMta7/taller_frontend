@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Employee from './Employee'
 import Table from './Table'
 
-const Employees = ({ employees }) => {
+const Employees = ({ employees, match }) => {
   return (
     <>
       <table className='table table-hover'>
