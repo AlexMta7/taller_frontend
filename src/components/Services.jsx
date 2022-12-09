@@ -9,7 +9,7 @@ const Services = ({ services }) => {
               id
             </th>
             <th scope='col' width='20'>
-              Name{' '}
+              Name
             </th>
             <th scope='col' width='20'>
               Type
@@ -18,7 +18,7 @@ const Services = ({ services }) => {
               Description
             </th>
             <th scope='col' width='20'>
-              Actions
+              <div>Actions</div>
             </th>
           </tr>
         </thead>
