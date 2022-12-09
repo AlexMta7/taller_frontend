@@ -18,14 +18,14 @@ const Car = ({ car }) => {
         <td>{car.year}</td>
         <td>
           <Button
-            color={'danger'}
-            onClick={deleteCar}
-            icon={'fa-solid fa-trash'}
-          />
-          <Button
             color={'info'}
             onClick={deleteCar}
             icon={'fa-solid fa-pen-to-square'}
+          />
+          <Button
+            color={'danger'}
+            onClick={deleteCar}
+            icon={'fa-solid fa-trash'}
           />
         </td>
       </tr>

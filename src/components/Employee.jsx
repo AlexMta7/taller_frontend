@@ -18,14 +18,14 @@ const Employee = ({ employee }) => {
         <td>{employee.email}</td>
         <td>
           <Button
-            color={'danger'}
-            onClick={deleteEmplo}
-            icon={'fa-solid fa-trash'}
-          />
-          <Button
             color={'info'}
             onClick={deleteEmplo}
             icon={'fa-solid fa-pen-to-square'}
+          />
+          <Button
+            color={'danger'}
+            onClick={deleteEmplo}
+            icon={'fa-solid fa-trash'}
           />
         </td>
       </tr>

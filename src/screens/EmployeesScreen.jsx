@@ -10,7 +10,7 @@ const EmployeesScreen = ({ employees }) => {
           que en records muestre el nombre y que al dar clic del empleado o carro o lo que putas sea que ahí también se vaya 
           a la tabla pero que solo muestre ese id */}
       <Employees employees={employees} />
-      <Button text='Add employ' color='success' />
+      {/* <Button text='Add employ' color='success' /> */}
     </>
   )
 }
