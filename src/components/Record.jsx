@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, ListGroup } from 'react-bootstrap'
+import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import Button from './Button'
 
 const Record = ({ record }) => {
   const [employee, setEmployee] = useState([])
@@ -93,6 +94,15 @@ const Record = ({ record }) => {
             <ListGroup.Item className='py-1'>
               <Card.Text as='h5' style={{ color: 'black' }}>
                 {record.date}
+              </Card.Text>
+            </ListGroup.Item>
+
+            <ListGroup.Item className='py-1'>
+              <Card.Text as='h5' style={{ color: 'black' }}>
+                <div className='container fluid' align={'center'}>
+                  <Button icon={'fa-solid fa-pen-to-square'} color={'info'} />
+                  <Button icon={'fa-solid fa-trash'} color={'danger'} />
+                </div>
               </Card.Text>
             </ListGroup.Item>
           </ListGroup>
