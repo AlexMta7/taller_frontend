@@ -21,6 +21,13 @@ import CarsScreen from './screens/CarsScreen'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
+  // ============================MODAL=================================
+  const [showModal, setShowModal] = useState(false)
+
+  // const handleClose = () => setShowModal(false)
+  // const handleModal = () => setShowModal(!showModal)
+  // ============================MODAL=================================
+
   // ============================RECORDS=================================
   const [showAddRecord, setShowAddRecord] = useState(false)
   const [records, setRecords] = useState([])
@@ -36,13 +43,13 @@ function App() {
     getRecords()
   }, [])
 
-  // Fetch Employees from DB
+  // Fetch Records from DB
   const fetchRecords = async () => {
     const data = await (await fetch('http://localhost:8080/api/records')).json()
     return data
   }
 
-  //Add Task
+  //Add Record
   const addRecord = async (record) => {
     const res = await fetch('http://localhost:8080/api/records', {
       method: 'POST',
@@ -81,6 +88,20 @@ function App() {
       await fetch('http://localhost:8080/api/employees')
     ).json()
     return data
+  }
+
+  //Add Employee
+  const addEmployee = async (employee) => {
+    const res = await fetch('http://localhost:8080/api/employees', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(employee),
+    })
+
+    const data = await res.json()
+
+    //creates the entire array
+    // setRecords([...records, record])
   }
 
   // ============================EMPLOYESS=================================
@@ -168,6 +189,8 @@ function App() {
         <Navbar
           onAdd={() => setShowAddRecord(!showAddRecord)}
           showAddRecord={showAddRecord}
+          showModal={showModal}
+          handleModal={() => setShowModal(!showModal)}
         />
         <main className='py-3'>
           <Container>
@@ -206,7 +229,13 @@ function App() {
               />
               <Route
                 path='/services'
-                element={<ServiceScreen services={services} />}
+                element={
+                  <ServiceScreen
+                    services={services}
+                    handleModal={() => setShowModal(!showModal)}
+                    showModal={showModal}
+                  />
+                }
               />
               <Route path='/cars' element={<CarsScreen cars={cars} />} />
             </Routes>

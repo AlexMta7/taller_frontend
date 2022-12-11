@@ -1,13 +1,14 @@
 import { Nav, Container } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
+import ButtonModal from './ButtonModal'
 
-const Navbar = ({ onAdd, showAddRecord }) => {
+const Navbar = ({ onAdd, showAddRecord, showModal, handleModal }) => {
   const location = useLocation()
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+      <nav className='navbar navbar-expand-lg navbar-dark bg-primary sticky-top'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='/'>
             Tallercito
@@ -51,46 +52,27 @@ const Navbar = ({ onAdd, showAddRecord }) => {
                   Services
                 </Link>
               </li>
-              <li className='nav-item'>
-                <a
-                  className='nav-link dropdown-toggle'
-                  data-bs-toggle='dropdown'
-                  href='#'
-                  role='button'
-                  aria-haspopup='true'
-                  aria-expanded='false'
-                >
-                  Dropdown
-                </a>
-                <div className='dropdown-menu'>
-                  <a className='dropdown-item' href='#'>
-                    Action
-                  </a>
-                  <a className='dropdown-item' href='#'>
-                    Another action
-                  </a>
-                  <a className='dropdown-item' href='#'>
-                    Something else here
-                  </a>
-                  <div className='dropdown-divider'></div>
-                  <a className='dropdown-item' href='#'>
-                    Separated link
-                  </a>
-                </div>
-              </li>
             </ul>
             {location.pathname === '/' && (
-              <Button
-                text={!showAddRecord ? 'Add' : 'Close'}
-                onClick={onAdd}
-                color={!showAddRecord ? 'success' : 'danger'}
-              />
-            )}
-            {location.pathname === '/employees' && (
               <Button
                 text={'Add'}
                 onClick={onAdd}
                 color={!showAddRecord ? 'success' : 'danger'}
+              />
+            )}
+            {location.pathname === '/services' && (
+              <ButtonModal
+                text={!showModal ? 'Add' : 'Close'}
+                onClick={handleModal}
+                color={!showModal ? 'success' : 'danger'}
+              />
+            )}
+
+            {location.pathname === '/employees' && (
+              <ButtonModal
+                text={!showModal ? 'Add' : 'Close'}
+                onClick={handleModal}
+                color={!showModal ? 'success' : 'danger'}
               />
             )}
           </div>

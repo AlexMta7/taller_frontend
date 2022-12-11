@@ -52,6 +52,36 @@ const AddRecord = ({ onAdd }) => {
                       // setDay(e.target.value)
                     }}
                   />
+                  <br />
+                  <input
+                    className='form-control'
+                    type='text'
+                    placeholder='Add Day & Time'
+                    // value={day}
+                    onChange={(e) => {
+                      // setDay(e.target.value)
+                    }}
+                  />
+                  <br />
+                  <input
+                    className='form-control'
+                    type='text'
+                    placeholder='Add Day & Time'
+                    // value={day}
+                    onChange={(e) => {
+                      // setDay(e.target.value)
+                    }}
+                  />
+                  <br />
+                  <input
+                    className='form-control'
+                    type='text'
+                    placeholder='Add Day & Time'
+                    // value={day}
+                    onChange={(e) => {
+                      // setDay(e.target.value)
+                    }}
+                  />
                 </div>
                 <br />
                 <input

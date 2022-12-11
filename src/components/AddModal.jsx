@@ -1,20 +1,19 @@
-import AddModal from '../components/AddModal'
-import Services from '../components/Services'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 
-const ServiceScreen = ({ services, showModal, handleModal }) => {
-  console.log(showModal)
-  console.log(handleModal)
+const AddModal = ({ showModal, handleModal }) => {
+  // const [showModal, setShowModal] = useState(false)
+
+  // const handleClose = () => setShowModal(false)
+  // const handleShow = () => setShowModal(true)
 
   return (
     <>
-      <Services services={services} />
-      {/* {showModal && (
-        <AddModal showModal={showModal} handleModal={handleModal} />
-      )} */}
-      {/* <AddModal showModal={showModal} handleModal={handleModal} /> */}
+      {/* <Button variant='primary' onClick={handleModal}>
+        Launch demo modal
+      </Button> */}
+
       <Modal show={showModal} onHide={handleModal}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
@@ -51,4 +50,4 @@ const ServiceScreen = ({ services, showModal, handleModal }) => {
   )
 }
 
-export default ServiceScreen
+export default AddModal
