@@ -1,3 +1,4 @@
+import ActionButton from './ActionButton'
 import Button from './Button'
 const Car = ({ car }) => {
   // const deleteCar = (e) => {
@@ -22,7 +23,7 @@ const Car = ({ car }) => {
 
   // Delete a single car from DB
   const deleteCar = async () => {
-    if (!window.confirm('Delete car?')) {
+    if (!window.confirm(`Delete car ${car.id}?`)) {
       return
     }
 
@@ -30,6 +31,8 @@ const Car = ({ car }) => {
       method: 'DELETE',
     })
     // setCar(tasks.filter((task) => task.id !== id))
+    console.log(`Car ${car.id} deleted`)
+    window.location.href = window.location.href
   }
 
   return (
@@ -42,27 +45,18 @@ const Car = ({ car }) => {
         <td>{car.model}</td>
         <td>{car.year}</td>
         <td>
-          {/* <Button
-            color={'info'}
-            // onClick={}
-            icon={'fa-solid fa-pen-to-square'}
-          /> */}
           <h3>
-            <i
-              style={{ color: 'blue' }}
-              className='fa-solid fa-pen-to-square'
-            ></i>
-            <i
-              style={{ color: 'red' }}
+            <ActionButton
+              color={'blue'}
+              // onClick={}
+              icon={'fa-solid fa-pen-to-square'}
+            />
+            <ActionButton
+              color={'red'}
               onClick={() => deleteCar(car.id)}
-              className='fa-solid fa-trash'
-            ></i>
+              icon={'fa-solid fa-trash'}
+            />
           </h3>
-          {/* <Button
-            color={'danger'}
-            onClick={deleteCar(car.id)}
-            icon={'fa-solid fa-trash'}
-          /> */}
         </td>
       </tr>
     </>

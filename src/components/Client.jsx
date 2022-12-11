@@ -1,10 +1,25 @@
+import ActionButton from './ActionButton'
 import Button from './Button'
 
 const Client = ({ client }) => {
-  const deleteClient = (e) => {
-    e.preventDefault()
+  // const deleteClient = (e) => {
+  //   e.preventDefault()
 
-    alert('Delete Client')
+  //   alert('Delete Client')
+  // }
+
+  // Delete a single client from DB
+  const deleteClient = async () => {
+    if (!window.confirm(`Delete client ${client.id}?`)) {
+      return
+    }
+
+    await fetch('http://localhost:8080/api/clients/' + client.id, {
+      method: 'DELETE',
+    })
+    // setCar(tasks.filter((task) => task.id !== id))
+    console.log(`Client ${client.id} deleted`)
+    window.location.href = window.location.href
   }
 
   return (
@@ -17,16 +32,18 @@ const Client = ({ client }) => {
         <td>{client.email}</td>
         <td>{client.phone}</td>
         <td>
-          <Button
-            color={'info'}
-            onClick={deleteClient}
-            icon={'fa-solid fa-pen-to-square'}
-          />
-          <Button
-            color={'danger'}
-            onClick={deleteClient}
-            icon={'fa-solid fa-trash'}
-          />
+          <h3>
+            <ActionButton
+              color={'blue'}
+              // onClick={}
+              icon={'fa-solid fa-pen-to-square'}
+            />
+            <ActionButton
+              color={'red'}
+              onClick={() => deleteClient(client.id)}
+              icon={'fa-solid fa-trash'}
+            />
+          </h3>
         </td>
       </tr>
     </>

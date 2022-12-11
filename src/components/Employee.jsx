@@ -1,10 +1,18 @@
+import ActionButton from './ActionButton'
 import Button from './Button'
 
 const Employee = ({ employee }) => {
-  const deleteEmplo = (e) => {
-    e.preventDefault()
+  const deleteEmployee = async () => {
+    if (!window.confirm(`Delete employee ${employee.id}?`)) {
+      return
+    }
 
-    alert('Delete Emplo')
+    await fetch('http://localhost:8080/api/employees/' + employee.id, {
+      method: 'DELETE',
+    })
+    // setCar(tasks.filter((task) => task.id !== id))
+    console.log(`employee ${employee.id} deleted`)
+    window.location.href = window.location.href
   }
 
   return (
@@ -17,16 +25,18 @@ const Employee = ({ employee }) => {
         <td>{employee.dui}</td>
         <td>{employee.email}</td>
         <td>
-          <Button
-            color={'info'}
-            onClick={deleteEmplo}
-            icon={'fa-solid fa-pen-to-square'}
-          />
-          <Button
-            color={'danger'}
-            onClick={deleteEmplo}
-            icon={'fa-solid fa-trash'}
-          />
+          <h3>
+            <ActionButton
+              color={'blue'}
+              // onClick={}
+              icon={'fa-solid fa-pen-to-square'}
+            />
+            <ActionButton
+              color={'red'}
+              onClick={() => deleteEmployee(employee.id)}
+              icon={'fa-solid fa-trash'}
+            />
+          </h3>
         </td>
       </tr>
     </>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import Button from './Button'
+import ActionButton from './ActionButton'
 
 const Record = ({ record }) => {
   const [employee, setEmployee] = useState([])
@@ -51,6 +52,21 @@ const Record = ({ record }) => {
     ).json()
     return data
   }
+
+  //Delete a record from DB
+  const deleteRecord = async () => {
+    if (!window.confirm(`Delete record ${record.id}?`)) {
+      return
+    }
+
+    await fetch('http://localhost:8080/api/records/' + record.id, {
+      method: 'DELETE',
+    })
+    // setCar(tasks.filter((task) => task.id !== id))
+    console.log(`record ${record.id} deleted`)
+    window.location.href = window.location.href
+  }
+
   return (
     <div>
       <Card className='my-3 p-3 rounded py-1'>
@@ -100,8 +116,18 @@ const Record = ({ record }) => {
             <ListGroup.Item className='py-1'>
               <Card.Text as='h5' style={{ color: 'black' }}>
                 <div className='container fluid' align={'center'}>
-                  <Button icon={'fa-solid fa-pen-to-square'} color={'info'} />
-                  <Button icon={'fa-solid fa-trash'} color={'danger'} />
+                  <h3>
+                    <ActionButton
+                      color={'blue'}
+                      // onClick={}
+                      icon={'fa-solid fa-pen-to-square'}
+                    />
+                    <ActionButton
+                      color={'red'}
+                      onClick={() => deleteRecord(record.id)}
+                      icon={'fa-solid fa-trash'}
+                    />
+                  </h3>
                 </div>
               </Card.Text>
             </ListGroup.Item>
