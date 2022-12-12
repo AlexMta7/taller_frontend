@@ -5,6 +5,8 @@ import AddService from './AddService'
 import PropTypes from 'prop-types'
 import { propTypes } from 'react-bootstrap/esm/Image'
 import Button from './Button'
+import AddRecord from './AddRecord'
+import AddEmployee from './AddEmployee'
 
 const AddModal = ({ showModal, handleModal, title }) => {
   const location = useLocation()
@@ -24,21 +26,13 @@ const AddModal = ({ showModal, handleModal, title }) => {
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {/* Components */}
-          {location.pathname === '/services' && <AddService />}
-        </Modal.Body>
-        <Modal.Footer>
-          {/* <Button variant='secondary' onClick={handleModal}>
-            Close
-          </Button> */}
-          <Button
-            color={'primary'}
-            onClick={handleModal}
-            text={title}
-            icon={'fa-solid fa-floppy-disk'}
-          />
-        </Modal.Footer>
+        {/* Components contains BODY and FOOTER */}
+        {location.pathname === '/services' && (
+          <AddService handleModal={handleModal} />
+        )}
+        {location.pathname === '/employees' && (
+          <AddEmployee handleModal={handleModal} />
+        )}
       </Modal>
     </>
   )

@@ -25,12 +25,14 @@ const Service = ({ service }) => {
         <td>
           <h3>
             <ActionButton
-              color={'blue'}
+              //Color azul
+              color={'#3498DB'}
               // onClick={}
               icon={'fa-solid fa-pen-to-square'}
             />
             <ActionButton
-              color={'red'}
+              //Color rojo
+              color={'#E74C3C'}
               onClick={() => deleteService(service.id)}
               icon={'fa-solid fa-trash'}
             />

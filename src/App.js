@@ -216,16 +216,19 @@ function App() {
                 }
               />
               <Route
-                path='/employees'
-                element={<EmployeesScreen employees={employees} />}
-              />
-              <Route
-                path='/employee/:id'
-                element={<Employees employees={employees} />}
-              />
-              <Route
                 path='/clients'
                 element={<ClientsScreen clients={clients} />}
+              />
+              <Route path='/cars' element={<CarsScreen cars={cars} />} />
+              <Route
+                path='/employees'
+                element={
+                  <EmployeesScreen
+                    employees={employees}
+                    showModal={showModal}
+                    handleModal={() => setShowModal(!showModal)}
+                  />
+                }
               />
               <Route
                 path='/services'
@@ -237,7 +240,10 @@ function App() {
                   />
                 }
               />
-              <Route path='/cars' element={<CarsScreen cars={cars} />} />
+              {/* <Route
+                path='/employee/:id'
+                element={<Employees employees={employees} />}
+              /> */}
             </Routes>
           </Container>
         </main>

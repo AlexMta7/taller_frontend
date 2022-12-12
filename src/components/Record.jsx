@@ -118,12 +118,12 @@ const Record = ({ record }) => {
                 <div className='container fluid' align={'center'}>
                   <h3>
                     <ActionButton
-                      color={'blue'}
+                      color={'#3498DB'}
                       // onClick={}
                       icon={'fa-solid fa-pen-to-square'}
                     />
                     <ActionButton
-                      color={'red'}
+                      color={'#E74C3C'}
                       onClick={() => deleteRecord(record.id)}
                       icon={'fa-solid fa-trash'}
                     />

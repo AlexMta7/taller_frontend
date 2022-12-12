@@ -1,8 +1,9 @@
 import React from 'react'
+import AddModal from '../components/AddModal'
 import Button from '../components/Button'
 import Employees from '../components/Employees'
 
-const EmployeesScreen = ({ employees }) => {
+const EmployeesScreen = ({ employees, showModal, handleModal }) => {
   return (
     <>
       {/* Agregar que cuando vaya a la ruta
@@ -10,7 +11,13 @@ const EmployeesScreen = ({ employees }) => {
           que en records muestre el nombre y que al dar clic del empleado o carro o lo que putas sea que ahí también se vaya 
           a la tabla pero que solo muestre ese id */}
       <Employees employees={employees} />
-      {/* <Button text='Add employ' color='success' /> */}
+      {showModal && (
+        <AddModal
+          showModal={showModal}
+          handleModal={handleModal}
+          title={'Add Employee'}
+        />
+      )}
     </>
   )
 }
