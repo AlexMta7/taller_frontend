@@ -217,7 +217,13 @@ function App() {
               />
               <Route
                 path='/clients'
-                element={<ClientsScreen clients={clients} />}
+                element={
+                  <ClientsScreen
+                    clients={clients}
+                    showModal={showModal}
+                    handleModal={() => setShowModal(!showModal)}
+                  />
+                }
               />
               <Route
                 path='/cars'

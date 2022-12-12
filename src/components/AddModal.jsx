@@ -8,6 +8,7 @@ import Button from './Button'
 import AddRecord from './AddRecord'
 import AddEmployee from './AddEmployee'
 import AddCar from './AddCar'
+import AddClient from './AddClient'
 
 const AddModal = ({ showModal, handleModal, title }) => {
   const location = useLocation()
@@ -35,6 +36,9 @@ const AddModal = ({ showModal, handleModal, title }) => {
           <AddEmployee handleModal={handleModal} />
         )}
         {location.pathname === '/cars' && <AddCar handleModal={handleModal} />}
+        {location.pathname === '/clients' && (
+          <AddClient handleModal={handleModal} />
+        )}
       </Modal>
     </>
   )
