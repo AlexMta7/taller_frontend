@@ -232,8 +232,8 @@ function App() {
                 element={
                   <ServiceScreen
                     services={services}
-                    handleModal={() => setShowModal(!showModal)}
                     showModal={showModal}
+                    handleModal={() => setShowModal(!showModal)}
                   />
                 }
               />

@@ -1,7 +1,6 @@
 import { Nav, Container } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
-import ButtonModal from './ButtonModal'
 
 const Navbar = ({ onAdd, showAddRecord, showModal, handleModal }) => {
   const location = useLocation()
@@ -55,21 +54,24 @@ const Navbar = ({ onAdd, showAddRecord, showModal, handleModal }) => {
             </ul>
             {location.pathname === '/' && (
               <Button
-                text={'Add'}
-                onClick={onAdd}
-                color={!showAddRecord ? 'success' : 'danger'}
-              />
-            )}
-            {location.pathname === '/services' && (
-              <ButtonModal
                 text={!showModal ? 'Add' : 'Close'}
                 onClick={handleModal}
                 color={!showModal ? 'success' : 'danger'}
               />
             )}
+            {location.pathname === '/services' && (
+              <Button
+                text={!showModal ? 'Add' : 'Close'}
+                onClick={handleModal}
+                color={!showModal ? 'success' : 'danger'}
+                icon={
+                  !showModal ? 'fa-solid fa-plus' : 'fa-solid fa-circle-xmark'
+                }
+              />
+            )}
 
             {location.pathname === '/employees' && (
-              <ButtonModal
+              <Button
                 text={!showModal ? 'Add' : 'Close'}
                 onClick={handleModal}
                 color={!showModal ? 'success' : 'danger'}

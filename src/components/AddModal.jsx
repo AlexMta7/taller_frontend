@@ -1,8 +1,14 @@
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import { useLocation } from 'react-router-dom'
+import AddService from './AddService'
+import PropTypes from 'prop-types'
+import { propTypes } from 'react-bootstrap/esm/Image'
+import Button from './Button'
 
-const AddModal = ({ showModal, handleModal }) => {
+const AddModal = ({ showModal, handleModal, title }) => {
+  const location = useLocation()
+
   // const [showModal, setShowModal] = useState(false)
 
   // const handleClose = () => setShowModal(false)
@@ -16,38 +22,40 @@ const AddModal = ({ showModal, handleModal }) => {
 
       <Modal show={showModal} onHide={handleModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type='email'
-                placeholder='name@example.com'
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea1'
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as='textarea' rows={3} />
-            </Form.Group>
-          </Form>
+          {/* Components */}
+          {location.pathname === '/services' && <AddService />}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleModal}>
+          {/* <Button variant='secondary' onClick={handleModal}>
             Close
-          </Button>
-          <Button variant='primary' onClick={handleModal}>
-            Save Changes
-          </Button>
+          </Button> */}
+          <Button
+            color={'primary'}
+            onClick={handleModal}
+            text={title}
+            icon={'fa-solid fa-floppy-disk'}
+          />
         </Modal.Footer>
       </Modal>
     </>
   )
+}
+
+//Default properties
+AddModal.defaultProps = {
+  title: 'Title',
+  buttonText: 'Button Action',
+}
+
+//Default properties types
+AddModal.propTypes = {
+  showModal: PropTypes.bool,
+  handleModal: PropTypes.func,
+  title: PropTypes.string,
+  buttonText: PropTypes.string,
 }
 
 export default AddModal

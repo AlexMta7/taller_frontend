@@ -3,9 +3,7 @@ import { FaTrash } from 'react-icons/fa'
 const Button = ({ text, color, onClick, icon }) => {
   return (
     <button onClick={onClick} className={`btn btn-${color}`}>
-      <i className={icon}></i>
-      {''}
-      {text}
+      <i className={icon}></i> {text}
     </button>
   )
 }
