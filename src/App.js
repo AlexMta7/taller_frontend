@@ -219,7 +219,16 @@ function App() {
                 path='/clients'
                 element={<ClientsScreen clients={clients} />}
               />
-              <Route path='/cars' element={<CarsScreen cars={cars} />} />
+              <Route
+                path='/cars'
+                element={
+                  <CarsScreen
+                    cars={cars}
+                    showModal={showModal}
+                    handleModal={() => setShowModal(!showModal)}
+                  />
+                }
+              />
               <Route
                 path='/employees'
                 element={

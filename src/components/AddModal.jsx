@@ -7,6 +7,7 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 import Button from './Button'
 import AddRecord from './AddRecord'
 import AddEmployee from './AddEmployee'
+import AddCar from './AddCar'
 
 const AddModal = ({ showModal, handleModal, title }) => {
   const location = useLocation()
@@ -33,6 +34,7 @@ const AddModal = ({ showModal, handleModal, title }) => {
         {location.pathname === '/employees' && (
           <AddEmployee handleModal={handleModal} />
         )}
+        {location.pathname === '/cars' && <AddCar handleModal={handleModal} />}
       </Modal>
     </>
   )

@@ -48,6 +48,7 @@ const AddEmployee = ({ handleModal }) => {
     // setCode('')
     window.location.href = window.location.href
   }
+
   return (
     <>
       <Modal.Body>
@@ -75,11 +76,11 @@ const AddEmployee = ({ handleModal }) => {
               autoFocus
             />
           </Form.Group>
-          <Form.Group>
+          <Form.Group className='mb-3' controlId='exampleForm.ControlLastname'>
             <Form.Label>lastname</Form.Label>
             <Form.Control
               type='input'
-              placeholder='Employye Lastname'
+              placeholder='Employee Lastname'
               value={lastname}
               onChange={(e) => {
                 setLastname(e.target.value)
@@ -90,7 +91,7 @@ const AddEmployee = ({ handleModal }) => {
             <Form.Label>Type</Form.Label>
             <Form.Control
               type='input'
-              placeholder='Service Type'
+              placeholder='Employee Type'
               value={type}
               onChange={(e) => {
                 setType(e.target.value)
