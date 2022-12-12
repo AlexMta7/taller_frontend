@@ -18,6 +18,7 @@ import ClientsScreen from './screens/ClientsScreen'
 import Employee from './components/Employee'
 import ServiceScreen from './screens/ServiceScreen'
 import CarsScreen from './screens/CarsScreen'
+import AddModal from './components/AddModal'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -205,12 +206,15 @@ function App() {
                         employees={employees}
                         cars={cars}
                         clients={clients}
-                        showAddRecord={showAddRecord}
+                        showModal={showModal}
+                        handleModal={() => setShowModal(!showModal)}
                       />
                     ) : (
-                      <Col sm={12} md={6} lg={4} xl={3}>
-                        <AddRecord onAdd={addRecord} />
-                      </Col>
+                      <AddModal
+                        showModal={showModal}
+                        handleModal={() => setShowModal(!showModal)}
+                        title={'Add Record'}
+                      />
                     )}
                   </>
                 }

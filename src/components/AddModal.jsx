@@ -29,15 +29,16 @@ const AddModal = ({ showModal, handleModal, title }) => {
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         {/* Components contains BODY and FOOTER */}
-        {location.pathname === '/services' && (
-          <AddService handleModal={handleModal} />
+        {location.pathname === '/' && <AddRecord handleModal={handleModal} />}
+        {location.pathname === '/clients' && (
+          <AddClient handleModal={handleModal} />
         )}
+        {location.pathname === '/cars' && <AddCar handleModal={handleModal} />}
         {location.pathname === '/employees' && (
           <AddEmployee handleModal={handleModal} />
         )}
-        {location.pathname === '/cars' && <AddCar handleModal={handleModal} />}
-        {location.pathname === '/clients' && (
-          <AddClient handleModal={handleModal} />
+        {location.pathname === '/services' && (
+          <AddService handleModal={handleModal} />
         )}
       </Modal>
     </>

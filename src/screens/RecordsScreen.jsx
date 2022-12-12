@@ -1,4 +1,5 @@
 import { Col, Row } from 'react-bootstrap'
+import AddModal from '../components/AddModal'
 import Records from '../components/Records'
 
 const RecordsScreen = ({
@@ -6,7 +7,8 @@ const RecordsScreen = ({
   employees,
   cars,
   clients,
-  showAddRecord,
+  showModal,
+  handleModal,
 }) => {
   return (
     <>
@@ -15,8 +17,15 @@ const RecordsScreen = ({
         employees={employees}
         cars={cars}
         clients={clients}
-        showAddRecord={showAddRecord}
+        // showAddRecord={showAddRecord}
       />
+      {showModal && (
+        <AddModal
+          showModal={showModal}
+          handleModal={handleModal}
+          title={'Add Record'}
+        />
+      )}
     </>
   )
 }

@@ -42,7 +42,7 @@ const AddService = ({ handleModal }) => {
     setName('')
     setType('')
     setDescription('')
-    // window.location.href = window.location.href
+    window.location.href = window.location.href
   }
   return (
     <>

@@ -75,7 +75,8 @@ const Record = ({ record }) => {
             <ListGroup.Item className='py-1'>
               <Link to={`/employee/${employee.id}`}>
                 <Card.Text as='h4' style={{ color: 'black' }}>
-                  {record.id_employee + 'Empleado: ' + employee.name}
+                  {/* {record.id_employee + */}
+                  {'Empleado: ' + employee.name}
                   {/* Esta mandando a llamar el precio */}
                 </Card.Text>
               </Link>
@@ -83,14 +84,16 @@ const Record = ({ record }) => {
 
             <ListGroup.Item className='py-1'>
               <Card.Text as='h4' style={{ color: 'black' }}>
-                {record.id_car + 'Car: ' + car.brand + ' - ' + car.model}{' '}
+                {/* {record.id_car + */}
+                {'Car: ' + car.brand + ' - ' + car.model}{' '}
                 {/* Esta mandando a llamar el precio */}
               </Card.Text>
             </ListGroup.Item>
 
             <ListGroup.Item className='py-1'>
               <Card.Text as='h4' style={{ color: 'black' }}>
-                {record.id_service + 'Service: ' + service.name}{' '}
+                {/* {record.id_service + */}
+                {'Service: ' + service.name}
                 {/* Esta mandando a llamar el precio */}
               </Card.Text>
             </ListGroup.Item>

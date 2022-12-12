@@ -12,7 +12,7 @@ const AddEmployee = ({ handleModal }) => {
   const [email, setEmail] = useState('')
 
   //Add Service
-  const addService = async (employee) => {
+  const addEmployee = async (employee) => {
     // let method
     console.log(employee.cod_employ)
     // if (service.id == undefined) {
@@ -38,7 +38,7 @@ const AddEmployee = ({ handleModal }) => {
       return
     }
 
-    addService({ cod_employ, name, lastname, type, dui, email })
+    addEmployee({ cod_employ, name, lastname, type, dui, email })
 
     setName('')
     setLastname('')
