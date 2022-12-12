@@ -149,7 +149,7 @@ function App() {
     getServices()
   }, [])
 
-  // Fetch Employees from DB
+  // Fetch Services from DB
   const fetchServices = async () => {
     const data = await (
       await fetch('http://localhost:8080/api/services')

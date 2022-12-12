@@ -1,5 +1,5 @@
 import Service from './Service'
-const Services = ({ services }) => {
+const Services = ({ services, showModal, handleModal }) => {
   return (
     <>
       <table className='table table-hover'>
@@ -24,7 +24,12 @@ const Services = ({ services }) => {
         </thead>
         <tbody>
           {services.map((services, index) => (
-            <Service key={index} service={services} />
+            <Service
+              key={index}
+              service={services}
+              showModal={showModal}
+              handleModal={handleModal}
+            />
           ))}
         </tbody>
       </table>

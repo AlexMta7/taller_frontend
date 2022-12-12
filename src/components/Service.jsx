@@ -1,7 +1,7 @@
 import ActionButton from './ActionButton'
 import Button from './Button'
 
-const Service = ({ service }) => {
+const Service = ({ service, showModal, handleModal }) => {
   const deleteService = async () => {
     if (!window.confirm(`Delete service ${service.id}?`)) {
       return
@@ -27,7 +27,7 @@ const Service = ({ service }) => {
             <ActionButton
               //Color azul
               color={'#3498DB'}
-              // onClick={}
+              onClick={handleModal}
               icon={'fa-solid fa-pen-to-square'}
             />
             <ActionButton
