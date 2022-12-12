@@ -57,6 +57,9 @@ const Navbar = ({ onAdd, showAddRecord, showModal, handleModal }) => {
                 text={!showModal ? 'Add' : 'Close'}
                 onClick={handleModal}
                 color={!showModal ? 'success' : 'danger'}
+                icon={
+                  !showModal ? 'fa-solid fa-plus' : 'fa-solid fa-circle-xmark'
+                }
               />
             )}
             {location.pathname === '/clients' && (
